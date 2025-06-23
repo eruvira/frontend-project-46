@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-
-const getFormat = (filepath) => path.extname(filepath).slice(1) 
+import yaml from 'js-yaml'
 
 const readFile = (filepath) => {
   const fullPath = path.resolve(process.cwd(), filepath)
@@ -9,16 +8,21 @@ const readFile = (filepath) => {
 }
 
 const parse = (data, format) => {
-  if (format === 'json') {
-    return JSON.parse(data)
+  switch (format) {
+    case 'json':
+      return JSON.parse(data)
+    case 'yml':
+    case 'yaml':
+      return yaml.load(data)
+    default:
+      throw new Error(`Unsupported format: ${format}`)
   }
-  throw new Error(`Unknown file format: ${format}`)
 }
 
 const parseFile = (filepath) => {
   const data = readFile(filepath)
-  const format = getFormat(filepath)
-  return parse(data, format)
+  const ext = path.extname(filepath).slice(1)
+  return parse(data, ext)
 }
 
 export default parseFile
