@@ -9,5 +9,11 @@ fix:
 
 link:
 	npm link
+	
+test:
+	npm test
+
+ci:
+	npm run lint && npm test
 
 
