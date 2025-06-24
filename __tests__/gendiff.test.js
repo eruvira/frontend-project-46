@@ -6,10 +6,8 @@ import genDiff from '../src/index.js'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const getFixturePath = (filename) =>
-  path.join(__dirname, '..', '__fixtures__', filename)
-const readFixture = (filename) =>
-  readFileSync(getFixturePath(filename), 'utf-8').trim()
+const getFixturePath = filename => path.join(__dirname, '..', '__fixtures__', filename)
+const readFixture = filename => readFileSync(getFixturePath(filename), 'utf-8').trim()
 
 test('gendiff flat JSON files', () => {
   const file1 = getFixturePath('file1.json')
@@ -28,11 +26,7 @@ test('gendiff flat YAML files', () => {
 })
 
 test('gendiff plain format', () => {
-  const result = genDiff(
-    getFixturePath('file1.json'),
-    getFixturePath('file2.json'),
-    'plain'
-  )
+  const result = genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'plain')
   const expected = readFixture('expected_plain.txt')
   expect(result).toBe(expected)
 })
@@ -48,4 +42,3 @@ test('gendiff json format', () => {
   expect(parsed[0]).toHaveProperty('type')
   expect(parsed[0]).toHaveProperty('key')
 })
-

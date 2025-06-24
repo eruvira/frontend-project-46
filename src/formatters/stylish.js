@@ -1,16 +1,14 @@
 import _ from 'lodash'
 
 const getIndent = (depth, symbol = ' ') => `${' '.repeat(depth * 4 - 2)}${symbol} `
-const getBracketIndent = (depth) => ' '.repeat(depth * 4)
+const getBracketIndent = depth => ' '.repeat(depth * 4)
 
 const stringify = (value, depth) => {
   if (!_.isPlainObject(value)) {
     return String(value)
   }
 
-  const entries = Object.entries(value).map(
-    ([key, val]) => `${getIndent(depth + 1)}${key}: ${stringify(val, depth + 1)}`
-  )
+  const entries = Object.entries(value).map(([key, val]) => `${getIndent(depth + 1)}${key}: ${stringify(val, depth + 1)}`)
 
   return `{\n${entries.join('\n')}\n${getBracketIndent(depth)}}`
 }
