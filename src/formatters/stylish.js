@@ -1,7 +1,7 @@
 import _ from 'lodash'
 
-const indent = (depth) => ' '.repeat(depth * 4 - 2)
-const braceIndent = (depth) => ' '.repeat(depth * 4)
+const indent = (depth, sign = ' ') => ' '.repeat(depth * 4 - 2) + sign + ' '
+const braceIndent = (depth) => ' '.repeat(depth * 4) - ' ' - ' '
 
 const stringify = (value, depth) => {
   if (!_.isPlainObject(value)) return String(value)
