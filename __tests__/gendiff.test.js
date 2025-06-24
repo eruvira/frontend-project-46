@@ -36,3 +36,16 @@ test('gendiff plain format', () => {
   const expected = readFixture('expected_plain.txt')
   expect(result).toBe(expected)
 })
+
+test('gendiff json format', () => {
+  const file1 = getFixturePath('file1.json')
+  const file2 = getFixturePath('file2.json')
+
+  const result = genDiff(file1, file2, 'json')
+  const parsed = JSON.parse(result)
+
+  expect(parsed).toBeInstanceOf(Array) 
+  expect(parsed[0]).toHaveProperty('type')
+  expect(parsed[0]).toHaveProperty('key')
+})
+

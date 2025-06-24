@@ -14,3 +14,5 @@
 [![asciinema step 7]](https://asciinema.org/a/cDimu9Kj6ngOvqoUcmLHzGCaM)
 
 [![asciinema step 8]](https://asciinema.org/a/sGD1KE8VuZJjbrQ9cvskYeoCH)
+
+[![asciinema step9]](https://asciinema.org/a/oXofJBmvR69HkMcYrX9VOVUHb)
