@@ -16,7 +16,7 @@ test('gendiff flat JSON files', () => {
   const file2 = getFixturePath('file2.json')
   const expected = readFixture('expected.txt')
 
-  expect(genDiff(file1, file2)).toBe(expected)
+  expect(genDiff(file1, file2, 'stylish')).toBe(expected)
 })
 
 test('gendiff flat YAML files', () => {
@@ -24,5 +24,15 @@ test('gendiff flat YAML files', () => {
   const file2 = getFixturePath('file2.yml')
   const expected = readFixture('expected.txt')
 
-  expect(genDiff(file1, file2)).toBe(expected)
+  expect(genDiff(file1, file2, 'stylish')).toBe(expected)
+})
+
+test('gendiff plain format', () => {
+  const result = genDiff(
+    getFixturePath('file1.json'),
+    getFixturePath('file2.json'),
+    'plain'
+  )
+  const expected = readFixture('expected_plain.txt')
+  expect(result).toBe(expected)
 })
