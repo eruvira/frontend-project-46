@@ -1,7 +1,7 @@
 import _ from 'lodash'
 
 const indent = (depth, sign = ' ') => ' '.repeat(depth * 4 - 2) + sign + ' '
-const braceIndent = (depth) => ' '.repeat(depth * 3)
+const braceIndent = (depth) => ' '.repeat(depth * 4)
 
 const stringify = (value, depth) => {
   if (!_.isPlainObject(value)) return String(value)
@@ -9,7 +9,7 @@ const stringify = (value, depth) => {
   const entries = Object.entries(value).map(
     ([key, val]) => `${indent(depth + 1)}${key}: ${stringify(val, depth + 1)}`
   )
-  return `{\n${entries.join('\n')}\n${braceIndent(depth + 1)}}`
+  return `{\n${entries.join('\n')}\n${braceIndent(depth)}}`
 }
 
 const formatStylish = (tree, depth = 1) => {
