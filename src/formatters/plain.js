@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-const stringify = value => {
+const stringify = (value) => {
   if (_.isPlainObject(value)) return '[complex value]'
   if (typeof value === 'string') return `'${value}'`
   return String(value)
@@ -9,7 +9,7 @@ const stringify = value => {
 const iter = (tree, parent = '') => {
   const lines = tree
     .filter(node => node.type !== 'unchanged')
-    .map(node => {
+    .map((node) => {
       const property = parent ? `${parent}.${node.key}` : node.key
 
       switch (node.type) {

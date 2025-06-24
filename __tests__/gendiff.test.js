@@ -38,7 +38,7 @@ test('gendiff json format', () => {
   const result = genDiff(file1, file2, 'json')
   const parsed = JSON.parse(result)
 
-  expect(parsed).toBeInstanceOf(Array) 
+  expect(parsed).toBeInstanceOf(Array)
   expect(parsed[0]).toHaveProperty('type')
   expect(parsed[0]).toHaveProperty('key')
 })
