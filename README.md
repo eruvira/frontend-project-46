@@ -9,10 +9,10 @@
 
 [![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=eruvira_frontend-project-46)
 
-[![asciinema step 4]](https://asciinema.org/a/2WY7WPcj6qsNEFlCujUADwKJ5)
+[![asciinema step 4 gendiff __fixtures__/file1.json __fixtures__/file2.json]](https://asciinema.org/a/2WY7WPcj6qsNEFlCujUADwKJ5)
 
-[![asciinema step 7]](https://asciinema.org/a/cDimu9Kj6ngOvqoUcmLHzGCaM)
+[![asciinema step 7 gendiff __fixtures__/file1.json __fixtures__/file2.json gendiff __fixtures__/file1.yml __fixtures__/file2.yml]](https://asciinema.org/a/cDimu9Kj6ngOvqoUcmLHzGCaM)
 
-[![asciinema step 8]](https://asciinema.org/a/sGD1KE8VuZJjbrQ9cvskYeoCH)
+[![asciinema step 8 gendiff __fixtures__/file1.json __fixtures__/file2.json --format plian]](https://asciinema.org/a/sGD1KE8VuZJjbrQ9cvskYeoCH)
 
-[![asciinema step9]](https://asciinema.org/a/oXofJBmvR69HkMcYrX9VOVUHb)
+[![asciinema step 9 gendiff __fixtures__/file1.json __fixtures__/file2.json -- format json]](https://asciinema.org/a/oXofJBmvR69HkMcYrX9VOVUHb)
